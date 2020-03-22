@@ -1,0 +1,7 @@
+
+.person{
+	border:1px solid #eee;
+	display: inline-block;
+	padding: 20px;
+	box-shadow: 0 2px 2px #ccc;
+}
