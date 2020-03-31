@@ -5,6 +5,11 @@ import styled from 'styled-components';
 
 
 const Person = (props) => {
+    // const number = Math.random();
+    // if(number > .7){
+    //     throw new Error("error")
+        
+    // }
 return (
     
     <div className={classes.Person}>

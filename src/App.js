@@ -4,6 +4,8 @@ import classes from './App.module.css';
 import Person  from './Person/Person'
 import Radium , {StyleRoot} from 'radium';
 import styled from 'styled-components';
+import Errorboundary from './ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
 const StyledButton = styled.button`
