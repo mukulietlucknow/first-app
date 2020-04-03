@@ -1,0 +1,23 @@
+.red {
+    color: brown;
+  }
+  
+.bold {
+    font-weight: bold;
+  }
+
+.Button{
+    background-color : green;
+        color : white;
+        border-radius : 5px;
+        padding : 10px;
+        border : 1px solid grey;
+  
+  }
+  
+  
+.Button:hover {
+          background-color : pink;
+          color : white;
+          padding : 12px;
+        }
