@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import classes from './App.module.css';
-import Person  from './Person/Person'
+import Person  from '../Components/Persons/Person/Person'
 import Radium , {StyleRoot} from 'radium';
 import styled from 'styled-components';
-import Errorboundary from './ErrorBoundary/ErrorBoundary';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Errorboundary from '../ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 
 const StyledButton = styled.button`

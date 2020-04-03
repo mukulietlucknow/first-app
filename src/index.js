@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import props from 'prop-types';
-import App from './App'
+import App from './containers/App'
 
 class Person{
 	name = "mukul"
