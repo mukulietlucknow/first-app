@@ -1,9 +1,12 @@
-import React , {useEffect , useRef} from 'react';
+import React , {useContext} from 'react';
 import classes from './Cockpit.module.css';
-import authContext from '../../context/auth-context';
+import AuthContext from '../../context/auth-context';
 
-const cockpit = (props) => {
+const Cockpit = (props) => {
     let assignedClasses = [];
+    const authContext = useContext(AuthContext);
+
+    console.log(authContext.authenticated)
 
     if(props.person.length <= 2){
       assignedClasses.push(classes.red);
@@ -19,12 +22,12 @@ const cockpit = (props) => {
             <button
             className = {classes.Button}
             onClick={props.toggle}>switch button</button>
-            <authContext.Consumer>
-                {(context) => <button onClick = {context.login}>Login</button>}
-            </authContext.Consumer>            
+            
+            <button onClick = {authContext.login}>Login</button>}
+                      
         </div>
         
     );
 };
 
-export default React.memo(cockpit);
+export default React.memo(Cockpit);
