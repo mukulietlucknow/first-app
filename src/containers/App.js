@@ -117,7 +117,6 @@ class App extends Component {
           <Cockpit
           person={this.state.person}
           toggle = {this.toggleHandler}
-          login = {this.loginHandler}
           />
           
           {persons}
