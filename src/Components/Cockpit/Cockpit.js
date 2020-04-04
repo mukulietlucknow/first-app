@@ -1,4 +1,4 @@
-import React , {useEffect} from 'react';
+import React , {useEffect , useRef} from 'react';
 import classes from './Cockpit.module.css';
 
 const cockpit = (props) => {
@@ -18,6 +18,7 @@ const cockpit = (props) => {
             <button
             className = {classes.Button}
             onClick={props.toggle}>switch button</button>
+            <button onClick = {props.login}>Login</button>
         </div>
         
     );

@@ -5,6 +5,7 @@ import Persons  from '../Components/Persons/Persons';
 import Cockpit from '../Components/Cockpit/Cockpit';
 import withClass from '../hoc/WithClass';
 import Aux from '../hoc/Auxilary';
+import authContext from '../context/auth-context';
 
 class App extends Component {
 
@@ -26,7 +27,8 @@ class App extends Component {
       {id : '2' ,name : "mukul" , age : "2"},
       {id : '3' ,name : "mukul" , age : "3"}
     ],
-    showPerson : false
+    showPerson : false,
+    authenticated : false
   }
 
   nameChangedHandler = (event , id) => {
@@ -64,6 +66,10 @@ class App extends Component {
     this.setState({person : people});
   }
 
+  loginHandler = () => {
+    this.setState({authenticated : true});
+  };
+
   render(){
 
     console.log("render function");
@@ -98,17 +104,24 @@ class App extends Component {
           person={this.state.person}
           changed = {this.nameChangedHandler}
           clicked = {this.deletePersonHandler}
+          isAuthenticated = {this.state.authenticated}
            />    
         </div> 
       )
     }
     return (
         <Aux classes={classes.App}>
+          <authContext.Provider value={{
+            authenticated: this.state.authenticated , 
+            login: this.loginHandler}}>
           <Cockpit
           person={this.state.person}
           toggle = {this.toggleHandler}
+          login = {this.loginHandler}
           />
+          
           {persons}
+          </authContext.Provider>
         </Aux>
       //React.createElement('div' , {className: 'App'}, React.createElement('h1' , {className: 'App'} , "Hi my name is mukul")  )
     );
