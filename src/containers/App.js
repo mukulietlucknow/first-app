@@ -3,8 +3,23 @@ import logo from '../logo.svg';
 import classes from './App.module.css';
 import Persons  from '../Components/Persons/Persons';
 import Cockpit from '../Components/Cockpit/Cockpit';
+import withClass from '../hoc/WithClass';
+import Aux from '../hoc/Auxilary';
 
 class App extends Component {
+
+  // constructor(props){
+  //   super(props);
+  //   console.log("app.js constructor");
+    
+
+  // }
+
+  // static getDerivedStateFromProps(props , state){
+  //   console.log("getDerivedStateFromProps");
+  //   return state;
+  // }
+
   state = {
     person: [
       {id : '1' , name : "mukul" , age : "1"},
@@ -51,6 +66,8 @@ class App extends Component {
 
   render(){
 
+    console.log("render function");
+
     let style = {
       backgroundColor : 'green',
       color : 'white',
@@ -86,17 +103,17 @@ class App extends Component {
       )
     }
     return (
-        <div className={classes.App}>
+        <Aux classes={classes.App}>
           <Cockpit
           person={this.state.person}
           toggle = {this.toggleHandler}
           />
           {persons}
-        </div>
+        </Aux>
       //React.createElement('div' , {className: 'App'}, React.createElement('h1' , {className: 'App'} , "Hi my name is mukul")  )
     );
   }
   
 }
 
-export default App;
+export default withClass(App , classes.App );

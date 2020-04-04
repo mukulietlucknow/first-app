@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import classes from './Cockpit.module.css';
 
 const cockpit = (props) => {
@@ -23,4 +23,4 @@ const cockpit = (props) => {
     );
 };
 
-export default cockpit;
+export default React.memo(cockpit);
